@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+  <title>eventum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-wrap">
+        <div class="logo">
+          <a href="#"><img src="img/logo.png"/></a>
+        </div>
+        <div class="topnav">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">EXPLORE</a></li>
+            <li><a href="#">SCEDULE</a></li>
+            <li><a href="#">PRICE</a></li>
+            <li><a href="#">BLOG</a></li>
+
+            <div class="anchor-btn">
+              <li><a href="#">Buy Ticket</a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="hero-section">
+    <div class="hero-wrap">
+      <div class="container">
+        <div id="clockdiv">
+            <div>
+              <span class="days day-color"></span>
+              <div class="smalltext">DAY</div>
+            </div>
+            <div>
+              <span class="hours hour-color"></span>
+              <div class="smalltext">HOUR</div>
+            </div>
+            <div>
+              <span class="minutes min-color"></span>
+              <div class="smalltext">MINUTE</div>
+            </div>
+            <div>
+              <span class="seconds sec-color"></span>
+              <div class="smalltext">SECOND</div>
+            </div>
+        </div>
+          
+        <script>
+            function getTimeRemaining(endtime) {
+              var t = Date.parse(endtime) - Date.parse(new Date());
+              var seconds = Math.floor((t / 1000) % 60);
+              var minutes = Math.floor((t / 1000 / 60) % 60);
+              var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+              var days = Math.floor(t / (1000 * 60 * 60 * 24));
+              return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+              };
+          }
+
+            function initializeClock(id, endtime) {
+              var clock = document.getElementById(id);
+              var daysSpan = clock.querySelector('.days');
+              var hoursSpan = clock.querySelector('.hours');
+              var minutesSpan = clock.querySelector('.minutes');
+              var secondsSpan = clock.querySelector('.seconds');
+
+              function updateClock() {
+                var t = getTimeRemaining(endtime);
+
+                daysSpan.innerHTML = t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                if (t.total <= 0) {
+                  clearInterval(timeinterval);
+                }
+              }
+
+              updateClock();
+              var timeinterval = setInterval(updateClock, 1000);
+            }
+
+            var deadline = new Date(Date.parse(new Date()) + 91 * 24 * 60 * 60 * 1000);
+            initializeClock('clockdiv', deadline);
+
+        </script>
+
+        <div class="header-text">
+            <h1>music concert 2018</h1>
+            <p class="header-text-p">18 - 21 december, 2018, Dublin</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section-2">
+      <div class="container">
+        <div id="sec-2-content-wrap">
+          <div class="row">
+            <div class="column">
+              <div class="sec-2-img display-block-element">
+                <div class="play-button-icon">
+                  <a href="#"><i class="fas fa-play-circle"></i></a>
+                </div>
+                <img src="img/sec-2-img.jpg" width="550" height="360" />
+              </div>
+            </div>
+            <div class="column">
+              <div class="sec-2-text">
+                <h2>Music Concert 2018</h2>
+                <h4>Where All The New Artists Meets</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor<br>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no<br>strud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis<br>aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                <div class="sec-2-btn-wrap">
+                  <div class="sec-2-btn-1">
+                    <a class="text-dec" href="#">Buy Ticket</a>
+                  </div>
+                  <div class="sec-2-btn-2">
+                      <a class="text-dec" href="#">See Vanue</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <section class="section-3">
+    <div class="container">
+      <div class="section-3-heading">
+        <h2>Event  Schedule</h2>
+      </div>
+      <div class="sec-3-row-wrap">
+        <div class="row">
+          <div class="column-3">
+            <h1 class="sec-3-h1 d-pink">18</h1>
+            <p style="color:white">Dec 2015</p>
+            <h5 class="sec-3-h5">FINDING SUPPLIER</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">CREATING PRODUCTIVITY</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">PRODUCT LINES</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+          </div>
+          <div class="column-3">
+            <h1 class="sec-3-h1 min-color">19</h1>
+            <p style="color:white">Dec 2015</p>
+            <h5 class="sec-3-h5">FINDING SUPPLIER</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">CREATING PRODUCTIVITY</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">PRODUCT LINES</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+          </div>
+          <div class="column-3">
+            <h1 class="sec-3-h1 hour-color">20</h1>
+            <p style="color:white">Dec 2015</p>
+            <h5 class="sec-3-h5">FINDING SUPPLIER</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">CREATING PRODUCTIVITY</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">PRODUCT LINES</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+          </div>
+          <div class="column-3">
+            <h1 class="sec-3-h1 sec-color">21</h1>
+            <p style="color:white">Dec 2015</p>
+            <h5 class="sec-3-h5">FINDING SUPPLIER</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">CREATING PRODUCTIVITY</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+            <h5 class="sec-3-h5">PRODUCT LINES</h5>
+            <p class="sec-3-p">Speker: NEIL VOGEL<br>09:00 - 10:30,Room:A</p>
+          </div>
+        </div>
+      </div>
+   </div>
+  </section>
+  <section class="section-4">
+    <div class="container">
+      <div class="section-4-heading">
+          <h2>Who's  Performing?</h2>
+      </div>
+      <div class="sec-4-row-wrap">
+        <div class="row">
+          <div class="column-3">
+            <a class ="img-center" href="#"><img src="img/Aiken.jpg" width="250" height="250" /></a>
+            <h5 class="sec-4-h5">MARY AIKEN</h5>
+            <p class="sec-4-p">CCO, Bittorrent</p>
+
+          </div>
+          <div class="column-3">
+              <a class ="img-center" href="#"><img src="img/Kevin.jpg" width="250" height="250"/></a>
+              <h5 class="sec-4-h5">KEVIN GIBBON</h5>
+              <p class="sec-4-p">CEO, The Sage Group</p>
+          </div>
+          <div class="column-3">
+              <a class ="img-center" href="#"><img src="img/Kirt.jpg" width="250" height="250"/></a>
+              <h5 class="sec-4-h5">KIRT MCMASTER</h5>
+              <p class="sec-4-p">GM, The boxtrap</p>
+          </div>
+          <div class="column-3">
+            <a class ="img-center" href="#"><img src="img/Sabrina.jpg" width="250" height="250"/></a>
+            <h5 class="sec-4-h5">SABRINA KAY</h5>
+            <p class="sec-4-p">CEO, Hatem co.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sec-4-row-wrap">
+        <div class="row">
+          <div class="column-3">
+            <a class ="img-center" href="#"><img src="img/Rami.jpg" width="250" height="250"/></a>
+            <h5 class="sec-4-h5">RAMI ESSAID</h5>
+            <p class="sec-4-p">CCO, Kritsinok COmpnay</p>
+          </div>
+          <div class="column-3">
+            <a class ="img-center" href="#"><img src="img/Neil.jpg" width="250" height="250"/></a>
+            <h5 class="sec-4-h5">NEIL VOGEL</h5>
+            <p class="sec-4-p">Founder, Goalslop</p>
+          </div>
+          <div class="column-3">
+            <a class ="img-center" href="#"><img src="img/Stephen.jpg" width="250" height="250"/></a>
+            <h5 class="sec-4-h5">STEPHEN KELLY</h5>
+            <p class="sec-4-p">MD, Trapton</p>
+          </div>
+          <div class="column-3">
+            <a class ="img-center" href="#"><img src="img/Nanxi.jpg" width="250" height="250"/></a>
+            <h5 class="sec-4-h5">NANXI LIU</h5>
+            <p class="sec-4-p">AGM, Bittorrent</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-5">
+    <div class="container">
+      <div class="section-5-heading">
+            <h2>Buy Ticket</h2>
+        </div>
+        <div class="sec-5-row-wrap">
+
+        <div class="row">
+          <div class="column-4">
+            <div class="sec-5-content-wrap">
+              <h1 class="sec-5-h1">$100</h1>
+              <h5 class="sec-5-h5">Personal</h5>
+              <p class="sec-5-p">Entrance<br>Coffee Break<br>Certificate<br>Workshop</p>
+              <div class="sec-5-btn">
+                <a class="text-dec-5-btn" href="#">Buy Ticket</a>
+              </div>
+            </div>
+          </div>
+          <div class="column-4">
+            <div class="pricing-img">
+              <img class="img-center" src="img/pricing-overlay.jpg" widht="200" height="300" />
+              <div class="img-text-wrap">
+                <div class="sec-5-content-wrap">
+                  <h1 class="sec-5-h1">$200</h1>
+                  <h5 class="sec-5-h5">Personal</h5>
+                  <p class="sec-5-p">Entrance<br>Coffee Break<br>Certificate<br>Workshop</p>
+                  <div class="sec-5-btn">
+                    <a class="text-dec-5-btn" href="#">Buy Ticket</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column-4">
+              <div class="sec-5-content-wrap">
+                <h1 class="sec-5-h1">$500</h1>
+                <h5 class="sec-5-h5">Personal</h5>
+                <p class="sec-5-p">Entrance<br>Coffee Break<br>Certificate<br>Workshop</p>
+                <div class="sec-5-btn">
+                  <a class="text-dec-5-btn" href="#">Buy Ticket</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-5-heading">
+          <h2>From Our Blog</h2>
+      </div>
+      <div class="row">
+        <div class="blog-content-wrap">
+          <div class="column-4">
+            <div class="blog-img">
+              <img src="img/blog-img-1.jpg" width="350" height="350"/>
+              <div class="blog-dtail">
+                <p>03 Dec 2013 / 0 Comments</p>
+                <h5>Brooklyn Beta was the most important <br>conference I’ve been to.</h5>
+              </div>
+            </div>
+          </div>
+          <div class="column-4">
+            <div class="blog-img">
+                <img src="img/blog-img-2.jpg" width="350" height="350"/>
+                <div class="blog-dtail">
+                  <p>03 Dec 2013 / 0 Comments</p>
+                  <h5>Brooklyn Beta was the most important<br>conference I’ve been to.</h5>
+                </div>
+            </div>
+          </div>
+          <div class="column-4">
+            <div class="blog-img">
+                <img src="img/blog-img-3.jpg" width="350" height="350"/>
+                <div class="blog-dtail">
+                  <div class="blog-meta">
+                      <p>03 Dec 2013 / 0 Comments</p>
+                  </div>
+                  <div class="blog-heading">
+                    <h5>Brooklyn Beta was the most important<br>conference I’ve been to.</h5>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="call-section">
+    <div class="container">
+      <div class="call-section-content-wrap">
+        <div class="call-section-heading">
+            <h2>Join Music Concert 2018</h2>
+        </div>
+        <div class="call-section-text">
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore<br>magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</span>
+        </div>
+        <div class="call-section-button">
+            <a class="text-dec" href="#">Book Your Ticket</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sponsor-section">
+    <div class="container">
+      <div class="sponsor-text-wrap">
+        <div class="sponsor-section-heading">
+          <h2>Join Music Concert 2018</h2>
+        </div>
+        <div class="sponsor-section-text">
+          <span>Interested in becoming a sponsor? Get in touch</span>
+        </div>
+      </div>
+      
+      <div class="sponsor-img-wrap">
+        <div class="row">
+          <div class="column-3">
+            <img class="img-center" src="img/sponsor-img-4.png" />
+          </div>
+          <div class="column-3">
+              <img class="img-center" src="img/sponsor-img-2.png" />
+          </div>
+          <div class="column-3">
+              <img class="img-center" src="img/sponsor-img-3.png" />
+          </div>
+          <div class="column-3">
+              <img class="img-center" src="img/sponsor-img-4.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="map"></div>
+  <script>
+    function initMap() {
+    var uluru = {lat: 23.755796, lng: 90.376635};
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 17, center: uluru});
+    var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4RM7zOgOKq6n2fv407hX28xiL-M6vLdY&callback=initMap"></script>
+
+
+
+
+  <section class="footer-section">
+    <div class="container">
+      <div class="row">
+        <div class="column-3">
+      <div class="footer-content-wrap"></div>
+            <div class="footer-heading">
+              <span>Links</span>
+            </div>
+            <div class="footer-links">
+              <ul class="twocolumns">
+                <li><a href="#">Press</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">Volunteer</a></li>
+                <li><a href="#">INFORMATION</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="column-3">
+
+            <div class="footer-content-wrap">
+
+              <div class="footer-heading">
+                <span>Stay tuned</span>
+              </div>
+              <div class="footer-text">
+                <p>Connect with us and<br>stay in the loop.</p>
+              </div>
+              <div class="footer-social-icons">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+
+              </div>
+
+            </div>
+            <div class="column-3">
+                <div class="footer-heading">
+                  <span>Twitter Feed</span>
+                </div>
+                <div class="footer-text">
+                  <a class="footer-social-icons-twitter-feed" href="#"><i class="fab fa-twitter"></i></a>
+                  RT @DesignerDepot:<br>
+                      "Working on the right<br>
+                      thing  important " - Caterina<br>
+                      Fake #wdd #quote<br>
+                
+            </div>
+          </div>
+          <div class="column-3">
+            <div class="footer-content-wrap">
+              <div class="footer-heading">
+                  <span>Contact us</span>
+              </div>
+              <div class="footer-text">
+                  <p>Questions? We've got<br>answers. Try us.
+              </div>
+              <div class="footer-btn">
+                <a href="#">Email Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>Copyright 2015 Eventum.  Designed by Themeum</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
